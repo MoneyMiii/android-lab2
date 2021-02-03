@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:text="@string/tv_login" />
+
+        <TextView
+            android:id="@+id/tvPwd"
+            android:layout_width="115dp"
+            android:layout_height="45dp"
+            android:text="@string/tv_pwd"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etLogin"
+            android:layout_width="245dp"
+            android:layout_height="45dp"
+            android:autofillHints="@string/et_login"
+            android:hint="@string/et_login"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etPwd"
+            android:layout_width="245dp"
+            android:layout_height="45dp"
+            android:autofillHints="@string/et_pwd"
+            android:hint="@string/et_pwd"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/btnAuth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/btn_auth" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_weight="1"
+            android:text="@string/result" />
+
+    </LinearLayout>
+
+</LinearLayout>

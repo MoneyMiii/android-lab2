@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AuthActivity</string>
+    <string name="tv_login">Login: </string>
+    <string name="tv_pwd">Password: </string>
+    <string name="et_login">Input Login</string>
+    <string name="et_pwd">Input Password</string>
+    <string name="btn_auth">AUTHENTICATE</string>
+    <string name="result">Result</string>
+</resources>

@@ -1,12 +1,16 @@
 package com.example.flickrapp;
 
 import android.content.Context;
+import android.graphics.drawable.AnimatedStateListDrawable;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 import java.util.Vector;
+import java.util.zip.Inflater;
 
 public class MyAdapter extends BaseAdapter {
     private Vector<String> vector = new Vector<String>();
@@ -29,7 +33,15 @@ public class MyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Log.i("JFL", "TODO");
-        return null;
+        //Check if the convertview is null, if it is null it probably means that this is the first time the view has been displayed
+        if( convertView == null ){
+            convertView = View.inflate(parent.getContext(), R.layout.textviewlayout, null);
+        } else {
+            // Get textView then set text
+            TextView tvTest = convertView.findViewById(R.id.tv_test);
+            tvTest.setText(vector.get(position));
+        }
+        return convertView;
     }
 
     public void dd(String url) {

@@ -7,7 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
 
 import java.util.Vector;
 import java.util.zip.Inflater;
@@ -37,9 +40,14 @@ public class MyAdapter extends BaseAdapter {
         if( convertView == null ){
             convertView = View.inflate(parent.getContext(), R.layout.textviewlayout, null);
         } else {
-            // Get textView then set text
+            /*// Get textView then set text
             TextView tvTest = convertView.findViewById(R.id.tv_test);
-            tvTest.setText(vector.get(position));
+            tvTest.setText(vector.get(position));*/
+
+            // Get a RequestQueue
+            RequestQueue queue = MySingleton.getInstance(parent.getContext()).getRequestQueue();
+            // Get the component
+            ImageView iv = convertView.findViewById(R.id.iv_list);
         }
         return convertView;
     }

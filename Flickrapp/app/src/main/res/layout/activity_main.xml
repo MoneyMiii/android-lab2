@@ -18,7 +18,7 @@
         android:layout_width="wrap_content"
         android:layout_height="265dp"
         app:srcCompat="@drawable/image"
-        android:contentDescription="@string/defultImg" />
+        android:contentDescription="@string/defaultImg" />
 
     <Button
         android:id="@+id/btnGoListActivity"

@@ -22,7 +22,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    boolean res = false;
+    private boolean res = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,14 +62,10 @@ public class MainActivity extends AppCompatActivity {
                                         txtResult.setText((MainActivity.this.res) ? "True" : "False");
                                     }
                                 });
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             } finally {
                                 urlConnection.disconnect();
                             }
-                        } catch (MalformedURLException e) {
-                            e.printStackTrace();
-                        } catch (IOException e) {
+                        } catch (IOException | JSONException e ) {
                             e.printStackTrace();
                         }
                     }

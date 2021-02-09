@@ -16,6 +16,13 @@
     <ImageView
         android:id="@+id/image"
         android:layout_width="wrap_content"
+        android:layout_height="265dp"
+        app:srcCompat="@drawable/image"
+        android:contentDescription="@string/defultImg" />
+
+    <Button
+        android:id="@+id/btnGoListActivity"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/image" />
+        android:text="@string/goToListActivity" />
 </LinearLayout>

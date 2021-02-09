@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import com.android.volley.toolbox.ImageRequest;
 
 import java.util.Vector;
@@ -40,7 +41,8 @@ public class MyAdapter extends BaseAdapter {
         Log.i("JFL", "TODO");
         //Check if the convertview is null, if it is null it probably means that this is the first time the view has been displayed
         if( convertView == null ){
-            convertView = View.inflate(parent.getContext(), R.layout.textviewlayout, null);
+            //convertView = View.inflate(parent.getContext(), R.layout.textviewlayout, null);
+            convertView = View.inflate(parent.getContext(), R.layout.bitmaplayout, null);
         } else {
             /*// Get textView then set text
             TextView tvTest = convertView.findViewById(R.id.tv_test);
@@ -52,7 +54,10 @@ public class MyAdapter extends BaseAdapter {
             ImageView iv = convertView.findViewById(R.id.iv_list);
             // Get url
             String imageUrl = (String) getItem(position);
-
+            // Set image
+            Response.Listener<Bitmap> responseListener = (bmp) -> {
+                iv.setImageBitmap(bmp);
+            };
             ImageRequest request = new ImageRequest(imageUrl, responseListener, 500,
                     1000, ImageView.ScaleType.CENTER, Bitmap.Config.RGB_565, null);
 

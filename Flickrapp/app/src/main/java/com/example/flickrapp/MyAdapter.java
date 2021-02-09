@@ -1,6 +1,7 @@
 package com.example.flickrapp;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.drawable.AnimatedStateListDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.ImageRequest;
 
 import java.util.Vector;
 import java.util.zip.Inflater;
@@ -48,6 +50,14 @@ public class MyAdapter extends BaseAdapter {
             RequestQueue queue = MySingleton.getInstance(parent.getContext()).getRequestQueue();
             // Get the component
             ImageView iv = convertView.findViewById(R.id.iv_list);
+            // Get url
+            String imageUrl = (String) getItem(position);
+
+            ImageRequest request = new ImageRequest(imageUrl, responseListener, 500,
+                    1000, ImageView.ScaleType.CENTER, Bitmap.Config.RGB_565, null);
+
+            // Add the request to the RequestQueue
+            queue.add(request);
         }
         return convertView;
     }

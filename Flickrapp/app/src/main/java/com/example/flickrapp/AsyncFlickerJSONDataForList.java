@@ -57,6 +57,7 @@ public class AsyncFlickerJSONDataForList extends AsyncTask<String, Void, JSONObj
             {
                 String url = items.getJSONObject(i).getJSONObject("media").getString("m");
                 adapter.dd(url);
+                adapter.notifyDataSetChanged();
                 Log.i("JFL", "Adding to adapter url : " + url);
             }
         } catch (JSONException e) {

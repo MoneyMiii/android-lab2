@@ -11,6 +11,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        String url = "https://www.flickr.com/services/feeds/photos_public.gne?tags=trees&format=json&nojsoncallback=?";
         // Get ListView component by its id
         ListView lv = findViewById(R.id.list);
 
@@ -19,5 +20,7 @@ public class ListActivity extends AppCompatActivity {
 
         // Link the adapter to the ListView
         lv.setAdapter(adapter);
+
+        new AsyncFlickerJSONDataForList(adapter).execute(url);
     }
 }

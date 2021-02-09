@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Get button component to get image
+        // Get button components by their id
         Button btnGetImg = findViewById(R.id.btnGetImg);
         Button btnGoListActivity = findViewById(R.id.btnGoListActivity);
 
